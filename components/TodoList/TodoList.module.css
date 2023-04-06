@@ -1,0 +1,22 @@
+.todoContainer {
+  background-color: #aab7bf;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 15px;
+  padding: 30px;
+}
+.todoButton {
+  display: flex;
+  justify-content: space-between;
+}
+.todoCardContainer {
+  margin-top: 2rem;
+  height: 20rem;
+}
+.todoCard {
+  display: flex;
+  justify-content: space-between;
+}
+.todoCardLeft {
+  display: flex;
+}
