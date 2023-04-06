@@ -1,29 +1,10 @@
 import React, { useState } from "react";
 import { uuid } from "uuidv4";
 import styles from "components/TodoList/TodoList.module.css";
+import AddTodo from "./AddTodo";
 
 export default function TodoList() {
   const [TodoList, setTodoList] = useState(initialState);
-  const [textInput, setTextInput] = useState("");
-  const [category, setCategory] = useState({
-    switchAll: true,
-    switchActive: false,
-    switchCompleted: false,
-  });
-  const addTodo = function () {
-    if (textInput) {
-      const newTodoList = [
-        ...TodoList,
-        {
-          contents: textInput,
-          isActive: true,
-          id: uuid(),
-        },
-      ];
-      setTodoList(newTodoList);
-      setTextInput("");
-    }
-  };
 
   return (
     <div>
@@ -55,16 +36,7 @@ export default function TodoList() {
               );
             })}
           </div>
-          <div>
-            <input
-              type="text"
-              value={textInput}
-              onChange={(event) => {
-                setTextInput(event.target.value);
-              }}
-            />
-            <button onClick={addTodo}>Add</button>
-          </div>
+          <AddTodo TodoList={TodoList} setTodoList={setTodoList} />
         </div>
       </div>
     </div>
