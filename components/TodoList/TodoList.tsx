@@ -7,12 +7,18 @@ import Button from "./Button";
 
 export default function TodoList() {
   const [TodoList, setTodoList] = useState(initialState);
+  const filters = ["all", "active", "completed"];
+  const [category, setCategory] = useState(filters[0]);
 
   return (
     <div>
       <div className={styles.todoContainer}>
-        <Button />
-        <Todo TodoList={TodoList} setTodoList={setTodoList} />
+        <Button setCategory={setCategory} filters={filters} />
+        <Todo
+          TodoList={TodoList}
+          setTodoList={setTodoList}
+          category={category}
+        />
         <AddTodo TodoList={TodoList} setTodoList={setTodoList} />
       </div>
     </div>
