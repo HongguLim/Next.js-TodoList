@@ -20,3 +20,7 @@
 .todoCardLeft {
   display: flex;
 }
+
+.completed {
+  text-decoration: line-through;
+}

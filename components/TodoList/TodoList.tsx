@@ -2,42 +2,18 @@ import React, { useState } from "react";
 import { uuid } from "uuidv4";
 import styles from "components/TodoList/TodoList.module.css";
 import AddTodo from "./AddTodo";
+import Todo from "./Todo";
+import Button from "./Button";
 
 export default function TodoList() {
   const [TodoList, setTodoList] = useState(initialState);
 
   return (
     <div>
-      {" "}
       <div className={styles.todoContainer}>
-        <div className={styles.todoButton}>
-          <div>
-            <button>다크모드</button>
-          </div>
-          <div>
-            <button>All</button>
-            <button>Active</button>
-            <button>Completed</button>
-          </div>
-        </div>
-        <div>
-          <div className={styles.todoCardContainer}>
-            {TodoList.map(function (card) {
-              return (
-                <div className={styles.todoCard} key={card.id}>
-                  <div className={styles.todoCardLeft}>
-                    <input type="radio" />
-                    <p>{card.contents}</p>
-                  </div>
-                  <div>
-                    <button>휴지통</button>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <AddTodo TodoList={TodoList} setTodoList={setTodoList} />
-        </div>
+        <Button />
+        <Todo TodoList={TodoList} setTodoList={setTodoList} />
+        <AddTodo TodoList={TodoList} setTodoList={setTodoList} />
       </div>
     </div>
   );
