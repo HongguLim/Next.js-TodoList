@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "components/TodoList/TodoList.module.css";
+import styles from "components/TodoList/Todo/Todo.module.css";
 import { FiTrash2 } from "react-icons/fi";
 
 export default function Todo({ TodoList, setTodoList, category }) {
@@ -32,7 +32,7 @@ export default function Todo({ TodoList, setTodoList, category }) {
     }
   }, [TodoList, category]);
   return (
-    <div className={styles.todoCardContainer}>
+    <div className={styles.container}>
       {filteredTodoList.map(function (card) {
         return (
           <div className={styles.todoCard} key={card.id}>
@@ -51,7 +51,10 @@ export default function Todo({ TodoList, setTodoList, category }) {
               </label>
             </form>
             <div>
-              <button onClick={() => deleteTodo(card.id)}>
+              <button
+                className={styles.deleteButton}
+                onClick={() => deleteTodo(card.id)}
+              >
                 <FiTrash2 />
               </button>
             </div>

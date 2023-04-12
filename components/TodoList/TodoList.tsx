@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { uuid } from "uuidv4";
 import styles from "components/TodoList/TodoList.module.css";
-import AddTodo from "./AddTodo";
-import Todo from "./Todo";
-import Button from "./Button";
+import AddTodo from "./AddTodo/AddTodo";
+import Todo from "./Todo/Todo";
+import Button from "./Button/Button";
 
 export default function TodoList() {
   const [TodoList, setTodoList] = useState(initialState);
@@ -13,7 +13,11 @@ export default function TodoList() {
   return (
     <div>
       <div className={styles.todoContainer}>
-        <Button setCategory={setCategory} filters={filters} />
+        <Button
+          setCategory={setCategory}
+          filters={filters}
+          category={category}
+        />
         <Todo
           TodoList={TodoList}
           setTodoList={setTodoList}

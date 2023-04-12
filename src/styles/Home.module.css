@@ -1,8 +1,13 @@
 .main {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
   height: 100vh;
-  background-color: #e1e4e1;
+
+  background: linear-gradient(
+    90deg,
+    rgba(42, 67, 93, 1) 0%,
+    rgba(95, 156, 168, 1) 100%
+  );
 }
