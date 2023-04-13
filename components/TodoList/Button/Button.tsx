@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import styles from "components/TodoList/Button/Button.module.css";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { useDarkMode } from "@component/context/DarkModeContext";
 export default function Button({ setCategory, category, filters }) {
+  const { darkMode, toggleDarkMode } = useDarkMode();
+
   return (
     <div className={styles.container}>
       <div>
-        <button className={styles.todoButton}>다크모드</button>
+        <button className={styles.todoButton} onClick={toggleDarkMode}>
+          {darkMode ? <MdLightMode /> : <MdDarkMode />}
+        </button>
       </div>
       <div>
         <button
